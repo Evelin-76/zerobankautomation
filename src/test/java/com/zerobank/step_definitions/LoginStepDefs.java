@@ -56,11 +56,25 @@ public class LoginStepDefs extends LoginPage{
         new LoginPage().getTextWrongMsg();
     }
 
-    @Then("user sees a login error message")
-    public void userSeesALoginErrorMessage() {
-    }
-
     @When("any login input box is empty {string} {string}")
     public void anyLoginInputBoxIsEmpty(String arg0, String arg1) {
+        new LoginPage().usernameInputBox.sendKeys(arg0);
+        new LoginPage().passwordInputBox.sendKeys(arg1);
+        new LoginPage().signInButton.click();
+
+        if(!ConfigurationReader.get("username").equals(arg0)){
+            String username = ConfigurationReader.get("username");
+            String EmptyUsername = arg0;
+            System.out.println("Username input box is empty");
+        }else if(!ConfigurationReader.get("password").equals(arg1)){
+            String password = ConfigurationReader.get("password");
+            String EmptyPassword = arg1;
+            System.out.println("Password input box is empty");
+        }
+
+        new LoginPage().getTextTroublesMsg();
+    }
+    @Then("user sees a login error message")
+    public void userSeesALoginErrorMessage() {
     }
 }

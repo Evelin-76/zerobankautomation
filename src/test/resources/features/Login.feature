@@ -1,9 +1,8 @@
 Feature: Login as a authorized user
 @login
-  #Background:
-
 
   Scenario: User login with valid credentials
+    Given user is in login page
     When user enters valid "username" and "password"
     Then user enters to Account summary page
   @wip
@@ -13,6 +12,7 @@ Feature: Login as a authorized user
     Then user sees a login error message
 
   Scenario: User leaves any login input box blanked
+    Given user is in login page
     When any login input box is empty "" ""
     Then user sees a login error message
 

@@ -2,6 +2,7 @@ package com.zerobank.pages;
 
 import com.zerobank.step_definitions.LoginStepDefs;
 import com.zerobank.utilities.BrowserUtils;
+import io.cucumber.java.bs.A;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,23 +52,15 @@ public class LoginPage extends BasePage {
 
             String expectedErrorMsg = "Login and/or password are wrong.";
             Assert.assertEquals(expectedErrorMsg, loginWrongMsg.getText());
-        }
-        if (usernameInputBox.equals("") || passwordInputBox.equals("")) {
-            String expectedErrorMsg = "Login and/or password are wrong.";
-            Assert.assertEquals(expectedErrorMsg, loginWrongMsg.getText());
+            Assert.assertTrue(loginWrongMsg.isDisplayed());
         }
     }
     public void getTextTroublesMsg() {
-        if (!usernameInputBox.equals(ConfigurationReader.get("username"))
-                || !passwordInputBox.equals(ConfigurationReader.get("password"))) {
-
-            BrowserUtils.waitFor(2);
-            String expectedErrorMsg = "Login and/or password are wrong.";
-            Assert.assertEquals(expectedErrorMsg, loginTroublesMsgQuestion.getText());
-        }
         if (usernameInputBox.equals("") || passwordInputBox.equals("")) {
-            String expectedErrorMsg = "Login and/or password are wrong.";
-            Assert.assertEquals(expectedErrorMsg, loginTroublesMsgQuestion.getText());
+            String expectedTroubleMsg = "Troubles entering the site?";
+            Assert.assertEquals(expectedTroubleMsg, loginTroublesMsgQuestion.getText());
+            Assert.assertTrue(loginTroublesMsgQuestion.isDisplayed());
+
         }
     }
 }
