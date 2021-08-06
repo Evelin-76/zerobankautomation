@@ -1,5 +1,7 @@
 package com.zerobank.pages;
 
+import com.zerobank.step_definitions.LoginStepDefs;
+import com.zerobank.utilities.BrowserUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +30,7 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//*[text()='Log in to ZeroBank']")
     public WebElement pageTitle;
 
-    @FindBy(css = "[class='alert alert-error']")
+    @FindBy(xpath = "//*[@class='alert alert-error']")
     public WebElement loginWrongMsg;
 
     @FindBy (xpath = "//*[.='Troubles entering the site?']")
@@ -42,9 +44,11 @@ public class LoginPage extends BasePage {
         passwordInputBox.sendKeys(password);
         signInButton.click();
     }
+
     public void getTextWrongMsg() {
         if (!usernameInputBox.equals(ConfigurationReader.get("username"))
                 || !passwordInputBox.equals(ConfigurationReader.get("password"))) {
+
             String expectedErrorMsg = "Login and/or password are wrong.";
             Assert.assertEquals(expectedErrorMsg, loginWrongMsg.getText());
         }
@@ -56,6 +60,8 @@ public class LoginPage extends BasePage {
     public void getTextTroublesMsg() {
         if (!usernameInputBox.equals(ConfigurationReader.get("username"))
                 || !passwordInputBox.equals(ConfigurationReader.get("password"))) {
+
+            BrowserUtils.waitFor(2);
             String expectedErrorMsg = "Login and/or password are wrong.";
             Assert.assertEquals(expectedErrorMsg, loginTroublesMsgQuestion.getText());
         }

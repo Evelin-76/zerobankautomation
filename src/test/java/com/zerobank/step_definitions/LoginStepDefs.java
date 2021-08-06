@@ -1,6 +1,7 @@
 package com.zerobank.step_definitions;
 
 import com.zerobank.pages.LoginSecurityAlertPage;
+import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -34,4 +35,32 @@ public class LoginStepDefs extends LoginPage{
         Assert.assertEquals(expectedUrl,actualUrl);
     }
 
+    @When("user enter invalid username {string} or password {string}")
+    public void userEnterInvalidUsernameOrPassword(String arg0, String arg1) {
+        new LoginPage().usernameInputBox.sendKeys(arg0);
+        new LoginPage().passwordInputBox.sendKeys(arg1);
+        new LoginPage().signInButton.click();
+
+        if(!ConfigurationReader.get("username").equals(arg0)){
+            String username = ConfigurationReader.get("username");
+            String invalidUsername = arg0;
+            System.out.println("Valid username is: " +  username);
+            System.out.println("Invalid username used is: " + invalidUsername);
+        }else if(!ConfigurationReader.get("password").equals(arg1)){
+            String password = ConfigurationReader.get("password");
+            String invalidPassword = arg1;
+            System.out.println("Valid password is: " +  password);
+            System.out.println("Invalid password used is: " + invalidPassword);
+        }
+
+        new LoginPage().getTextWrongMsg();
+    }
+
+    @Then("user sees a login error message")
+    public void userSeesALoginErrorMessage() {
+    }
+
+    @When("any login input box is empty {string} {string}")
+    public void anyLoginInputBoxIsEmpty(String arg0, String arg1) {
+    }
 }

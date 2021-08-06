@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-08-06T13:26:10.519Z",
+        "start_timestamp": "2021-08-06T15:25:14.030Z",
         "before": [
           {
             "result": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 4,
-        "name": "User login with valid credentials",
+        "line": 10,
+        "name": "User login with invalid credentials",
         "description": "",
-        "id": "login-as-a-authorized-user;user-login-with-valid-credentials",
+        "id": "login-as-a-authorized-user;user-login-with-invalid-credentials",
         "after": [
           {
             "result": {
-              "duration": 677000000,
+              "duration": 681000000,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 4608000000,
+              "duration": 2704000000,
               "status": "passed"
             },
-            "line": 5,
+            "line": 11,
             "name": "user is in login page",
             "match": {
               "location": "com.zerobank.step_definitions.LoginStepDefs.user_is_in_login_page()"
@@ -47,42 +47,41 @@
           },
           {
             "result": {
-              "duration": 1748000000,
+              "duration": 531000000,
               "status": "passed"
             },
-            "line": 6,
-            "name": "user enters valid \"username\" and \"password\"",
+            "line": 12,
+            "name": "user enter invalid username \"usernam\" or password \"UserUse123\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"username\"",
-                  "offset": 18
+                  "val": "\"usernam\"",
+                  "offset": 28
                 },
                 {
-                  "val": "\"password\"",
-                  "offset": 33
+                  "val": "\"UserUse123\"",
+                  "offset": 50
                 }
               ],
-              "location": "com.zerobank.step_definitions.LoginStepDefs.user_enters_valid_and(java.lang.String,java.lang.String)"
+              "location": "com.zerobank.step_definitions.LoginStepDefs.userEnterInvalidUsernameOrPassword(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 6000000,
               "status": "passed"
             },
-            "line": 7,
-            "name": "user enters to Account summary page",
+            "line": 13,
+            "name": "user sees a login error message",
             "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.user_enters_to_Account_summary_page()"
+              "location": "com.zerobank.step_definitions.LoginStepDefs.userSeesALoginErrorMessage()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@login"
+            "name": "@wip"
           }
         ]
       }
