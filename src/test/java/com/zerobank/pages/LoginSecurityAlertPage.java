@@ -4,7 +4,7 @@ import com.zerobank.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SecurityAlertPage extends BasePage{
+public class LoginSecurityAlertPage extends BasePage{
 
     @FindBy(xpath = "//*[@aria-expanded='false']")
     public WebElement alertSecurityPage;

@@ -1,7 +1,6 @@
 package com.zerobank.step_definitions;
 
-import com.zerobank.pages.SecurityAlertPage;
-import com.zerobank.utilities.BrowserUtils;
+import com.zerobank.pages.LoginSecurityAlertPage;
 import com.zerobank.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,7 +24,7 @@ public class LoginStepDefs extends LoginPage{
         LoginPage loginPage = new LoginPage();
         loginPage.loginAsUser();
    //     BrowserUtils.waitFor(1);
-        new SecurityAlertPage().accept();
+        new LoginSecurityAlertPage().accept();
     }
 
     @Then("user enters to Account summary page")

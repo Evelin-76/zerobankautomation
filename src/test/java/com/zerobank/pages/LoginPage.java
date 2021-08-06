@@ -1,5 +1,6 @@
 package com.zerobank.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import com.zerobank.utilities.ConfigurationReader;
@@ -27,7 +28,11 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//*[text()='Log in to ZeroBank']")
     public WebElement pageTitle;
 
+    @FindBy(css = "[class='alert alert-error']")
+    public WebElement loginWrongMsg;
 
+    @FindBy (xpath = "//*[.='Troubles entering the site?']")
+    public WebElement loginTroublesMsgQuestion;
 
     public void loginAsUser() {
         String username = ConfigurationReader.get("username");
@@ -36,5 +41,27 @@ public class LoginPage extends BasePage {
         usernameInputBox.sendKeys(username);
         passwordInputBox.sendKeys(password);
         signInButton.click();
+    }
+    public void getTextWrongMsg() {
+        if (!usernameInputBox.equals(ConfigurationReader.get("username"))
+                || !passwordInputBox.equals(ConfigurationReader.get("password"))) {
+            String expectedErrorMsg = "Login and/or password are wrong.";
+            Assert.assertEquals(expectedErrorMsg, loginWrongMsg.getText());
+        }
+        if (usernameInputBox.equals("") || passwordInputBox.equals("")) {
+            String expectedErrorMsg = "Login and/or password are wrong.";
+            Assert.assertEquals(expectedErrorMsg, loginWrongMsg.getText());
+        }
+    }
+    public void getTextTroublesMsg() {
+        if (!usernameInputBox.equals(ConfigurationReader.get("username"))
+                || !passwordInputBox.equals(ConfigurationReader.get("password"))) {
+            String expectedErrorMsg = "Login and/or password are wrong.";
+            Assert.assertEquals(expectedErrorMsg, loginTroublesMsgQuestion.getText());
+        }
+        if (usernameInputBox.equals("") || passwordInputBox.equals("")) {
+            String expectedErrorMsg = "Login and/or password are wrong.";
+            Assert.assertEquals(expectedErrorMsg, loginTroublesMsgQuestion.getText());
+        }
     }
 }
