@@ -1,0 +1,96 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-08-05T22:24:47.722Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.zerobank.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "User login with valid credentials",
+        "description": "",
+        "id": "login-as-a-authorized-user;user-login-with-valid-credentials",
+        "after": [
+          {
+            "result": {
+              "duration": 689000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.zerobank.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2664000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is in login page",
+            "match": {
+              "location": "com.zerobank.step_definitions.LoginStepDefs.user_is_in_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2197000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters valid \"username\" and \"password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"username\"",
+                  "offset": 18
+                },
+                {
+                  "val": "\"password\"",
+                  "offset": 33
+                }
+              ],
+              "location": "com.zerobank.step_definitions.LoginStepDefs.user_enters_valid_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enters to Account summary page",
+            "match": {
+              "location": "com.zerobank.step_definitions.LoginStepDefs.user_enters_to_Account_summary_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login"
+          }
+        ]
+      }
+    ],
+    "name": "Login as a authorized user",
+    "description": "",
+    "id": "login-as-a-authorized-user",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Login.feature",
+    "tags": []
+  }
+]
