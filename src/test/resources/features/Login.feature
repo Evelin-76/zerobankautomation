@@ -1,5 +1,5 @@
 Feature: Login as an authorized user
-  @wip
+@wip
   @loginWithValidCredentials
   Scenario: User login with valid credentials
     When user enters valid "username" and "password"
