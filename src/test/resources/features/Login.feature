@@ -1,4 +1,4 @@
-Feature: Login as a authorized user
+Feature: Login as an authorized user
 @login
 
   Scenario: User login with valid credentials
