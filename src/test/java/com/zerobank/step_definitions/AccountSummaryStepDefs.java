@@ -27,11 +27,11 @@ public class AccountSummaryStepDefs {
         Assert.assertEquals("Zero –Account summary",actualTitle);
     }
 
-    @And("Account drop down options are:")
-    public void accountDropDownOptionsAre() {
+    @And("Account Summary account types are:")
+    public void accountSummaryAccountTypesAre() {
     }
 
-    @And("Transactions table column names are:")
-    public void transactionsTableColumnNamesAre() {
+    @And("Credit Accounts table column names are:")
+    public void creditAccountsTableColumnNamesAre() {
     }
 }
