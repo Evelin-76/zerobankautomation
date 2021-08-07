@@ -5,17 +5,15 @@ Feature: Access to Dashboard Page with the Account Summary Information
     Given user enters valid "username" and "password"
     When user is in account summary page
     Then title of page is "Zero - Account Summary"
-    And  Account drop down default is "Savings"
-    And  Account drop down options are:
-    | Savings |
-    | Checking|
-    | Loan |
+    And  Account Summary account types are:
+    | Cash Accounts |
+    | Investment Account|
+    | Credit Accounts |
+    | Loan Accounts |
+    And Credit Accounts table column names are:
+    | Account |
     | Credit Card |
-    | Brokerage |
-    And Transactions table column names are:
-    | Date |
-    | Description |
-    | Deposit |
-    | Withdrawal |
+    | Balance |
+
 
 

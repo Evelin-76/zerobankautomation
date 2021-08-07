@@ -18,18 +18,13 @@ public class AccountSummaryStepDefs {
         new DashboardPage().waitUntilLoaderScreenDisappear();
         System.out.println(loginPage);
         System.out.println(currentPage);
-     //   Assert.assertNotEquals(loginPage,currentPage);
-
+        Assert.assertNotEquals(loginPage,currentPage);
     }
 
     @Then("title of page is {string}")
     public void titleOfPageIs(String arg0) {
         String actualTitle = Driver.get().getTitle();
         Assert.assertEquals("Zero –Account summary",actualTitle);
-    }
-
-    @And("Account drop down default is {string}")
-    public void accountDropDownDefaultIs(String arg0) {
     }
 
     @And("Account drop down options are:")
