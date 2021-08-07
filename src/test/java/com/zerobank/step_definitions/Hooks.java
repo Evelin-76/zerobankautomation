@@ -1,5 +1,7 @@
 package com.zerobank.step_definitions;
 
+import com.zerobank.pages.LoginPage;
+import com.zerobank.utilities.ConfigurationReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -7,10 +9,16 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import com.zerobank.utilities.Driver;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
 
     @Before
     public void setUp() throws InterruptedException {
+        String url = ConfigurationReader.get("url");
+        Driver.get().get(url);
+        Driver.get().manage().window().maximize();
+        Driver.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
     }
     @After
