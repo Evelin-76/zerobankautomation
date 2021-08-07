@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-08-06T15:47:10.578Z",
+        "start_timestamp": "2021-08-07T21:59:56.297Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 3221000000,
               "status": "passed"
             },
             "match": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 9,
-        "name": "User login with invalid credentials",
+        "line": 14,
+        "name": "User leaves any login input box blanked",
         "description": "",
-        "id": "login-as-a-authorized-user;user-login-with-invalid-credentials",
+        "id": "login-as-an-authorized-user;user-leaves-any-login-input-box-blanked",
         "after": [
           {
             "result": {
-              "duration": 660000000,
+              "duration": 652000000,
               "status": "passed"
             },
             "match": {
@@ -35,35 +35,23 @@
         "steps": [
           {
             "result": {
-              "duration": 2648000000,
+              "duration": 526000000,
               "status": "passed"
             },
-            "line": 10,
-            "name": "user is in login page",
-            "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.user_is_in_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 556000000,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "user enter invalid username \"usernam\" or password \"UserUser123\"",
+            "line": 15,
+            "name": "any login input box is empty \"\" \"\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"usernam\"",
-                  "offset": 28
+                  "val": "\"\"",
+                  "offset": 29
                 },
                 {
-                  "val": "\"UserUser123\"",
-                  "offset": 50
+                  "val": "\"\"",
+                  "offset": 32
                 }
               ],
-              "location": "com.zerobank.step_definitions.LoginStepDefs.userEnterInvalidUsernameOrPassword(java.lang.String,java.lang.String)"
+              "location": "com.zerobank.step_definitions.LoginStepDefs.anyLoginInputBoxIsEmpty(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
@@ -71,7 +59,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 12,
+            "line": 16,
             "name": "user sees a login error message",
             "match": {
               "location": "com.zerobank.step_definitions.LoginStepDefs.userSeesALoginErrorMessage()"
@@ -82,13 +70,16 @@
         "tags": [
           {
             "name": "@wip"
+          },
+          {
+            "name": "@emptyLoginInputBox"
           }
         ]
       }
     ],
-    "name": "Login as a authorized user",
+    "name": "Login as an authorized user",
     "description": "",
-    "id": "login-as-a-authorized-user",
+    "id": "login-as-an-authorized-user",
     "keyword": "Feature",
     "uri": "file:src/test/resources/features/Login.feature",
     "tags": []
