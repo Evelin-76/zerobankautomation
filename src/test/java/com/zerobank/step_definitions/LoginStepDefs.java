@@ -13,12 +13,6 @@ import com.zerobank.utilities.Driver;
 
 public class LoginStepDefs extends LoginPage{
 
-    @Given("user is in login page")
-    public void user_is_in_login_page() {
-        String url = ConfigurationReader.get("url");
-        Driver.get().get(url);
-    }
-
     @When("user enters valid {string} and {string}")
     public void user_enters_valid_and(String string, String string2) {
        // BrowserUtils.waitFor(3);
