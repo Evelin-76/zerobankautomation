@@ -61,7 +61,6 @@ public abstract class BasePage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public String getUserName(){
@@ -69,8 +68,6 @@ public abstract class BasePage {
         BrowserUtils.waitForVisibility(userName, 5);
         return userName.getText();
     }
-
-
 
     public void logOut(){
         BrowserUtils.waitFor(2);
