@@ -19,6 +19,9 @@ public class Driver {
     private static WebDriver driver;
 
     public static WebDriver get() {
+        //option for accept insecurities windows when automate page
+        //just chrome is implemented.We can add more case if necessary
+
         // Test
         if (driver == null) {
             // this line will tell which browser should open based on the value from properties file
