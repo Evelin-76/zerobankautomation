@@ -19,7 +19,7 @@ Background:
     | Loan |
     | Credit Card |
     | Brokerage |
-  @wip
+
   Scenario: User checks Transactions table info column names
     Then Transtaction table column names are:
     | Date |
