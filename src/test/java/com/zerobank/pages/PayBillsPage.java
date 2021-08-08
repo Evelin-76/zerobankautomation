@@ -30,7 +30,7 @@ public class PayBillsPage {
 
 
     //Locator for select dynamically one full date(month/year/day ->writing int numbers)
-    public WebElement getDateLocator(int monthNumber,int yearNumber,int dayNumber){
+    public WebElement getDinamicDateLocator(int monthNumber,int yearNumber,int dayNumber){
         WebElement dinamicDateCalendar = Driver.get().findElement(By.xpath("(//td[@data-handler='selectDay'][@data-month='" + monthNumber + "']" +
                 "[@data-year='" + yearNumber + "']/a)[" + dayNumber + "]"));
         return dinamicDateCalendar;

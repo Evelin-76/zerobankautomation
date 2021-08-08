@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 public class PayBillsStepDefs {
     @When("user completes a successful Pay operation")
     public void userCompletesASuccessfulPayOperation() {
+        new PayBillsStepDefs().
     }
 
     @Then("{string} is displayed")
