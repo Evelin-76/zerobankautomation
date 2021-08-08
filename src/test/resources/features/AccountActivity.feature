@@ -4,8 +4,8 @@ Background:
   Given user enters valid "username" and "password"
   And user is in Dashboard page
   When user navigate to "Account Activity"
-  Scenario: User is in the Account Activity page
 
+  Scenario: User is in the Account Activity page
     Then title of page is "Zero - Account Activity"
 
   Scenario: User checks drop down default option
