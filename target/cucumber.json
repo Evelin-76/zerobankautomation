@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1669000000,
+              "duration": 1711000000,
               "status": "passed"
             },
             "line": 4,
@@ -33,7 +33,7 @@
           },
           {
             "result": {
-              "duration": 9636000000,
+              "duration": 30180000000,
               "status": "passed"
             },
             "line": 5,
@@ -45,7 +45,7 @@
           },
           {
             "result": {
-              "duration": 1561000000,
+              "duration": 1547000000,
               "status": "passed"
             },
             "line": 6,
@@ -64,11 +64,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-08-08T13:00:17.386Z",
+        "start_timestamp": "2021-08-08T15:07:04.930Z",
         "before": [
           {
             "result": {
-              "duration": 3475000000,
+              "duration": 2761000000,
               "status": "passed"
             },
             "match": {
@@ -76,14 +76,14 @@
             }
           }
         ],
-        "line": 11,
-        "name": "User checks drop down default option",
+        "line": 14,
+        "name": "User checks drop down options",
         "description": "",
-        "id": "navigate-to-account-activity-page;user-checks-drop-down-default-option",
+        "id": "navigate-to-account-activity-page;user-checks-drop-down-options",
         "after": [
           {
             "result": {
-              "duration": 702000000,
+              "duration": 691000000,
               "status": "passed"
             },
             "match": {
@@ -96,20 +96,53 @@
         "steps": [
           {
             "result": {
-              "duration": 93000000,
+              "duration": 190000000,
               "status": "passed"
             },
-            "line": 12,
-            "name": "drop down default option is \"Savings\"",
+            "line": 15,
+            "name": "user clicks on drop dawn options box",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Savings\"",
-                  "offset": 28
-                }
-              ],
-              "location": "com.zerobank.step_definitions.AccountActivityStepDefs.dropDownDefaultOptionIs(java.lang.String)"
+              "location": "com.zerobank.step_definitions.AccountActivityStepDefs.userClicksOnDropDawnOptionsBox()"
             },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 84000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "drop down options are:",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountActivityStepDefs.dropDownOptionsAre(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Savings"
+                ]
+              },
+              {
+                "cells": [
+                  "Checking"
+                ]
+              },
+              {
+                "cells": [
+                  "Loan"
+                ]
+              },
+              {
+                "cells": [
+                  "Credit Card"
+                ]
+              },
+              {
+                "cells": [
+                  "Brokerage"
+                ]
+              }
+            ],
             "keyword": "Then "
           }
         ],
