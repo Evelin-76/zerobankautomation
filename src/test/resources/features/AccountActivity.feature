@@ -1,12 +1,12 @@
 Feature: Navigate to Account Activity page
 
-  Background:
 
+@wip
   Scenario: User is in the Account Activity page
     Given user enters valid "username" and "password"
     And user is in Dashboard page
     When user navigate to "Account Activity"
-    Then title of page is "Zero - Account activity"
+    Then title of page is "Zero - Account Activity"
 
   Scenario: User checks drop down default option
     Then drop down default option is "Savings"

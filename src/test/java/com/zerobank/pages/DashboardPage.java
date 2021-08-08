@@ -13,4 +13,5 @@ public class DashboardPage extends BasePage {
     @FindBy (xpath = "(//thead/tr)[3]")
     public List<WebElement> tableHead;
 
+
 }

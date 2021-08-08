@@ -1,5 +1,5 @@
 Feature: Access to Dashboard Page that contains Account Summary Information
-  @wip
+
   @AccountSummaryPage
   Scenario: User accesses to Account Summary Information
     Given user enters valid "username" and "password"

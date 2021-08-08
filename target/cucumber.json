@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-08-08T10:00:48.254Z",
+        "start_timestamp": "2021-08-08T11:59:07.144Z",
         "before": [
           {
             "result": {
-              "duration": 2699000000,
+              "duration": 2772000000,
               "status": "passed"
             },
             "match": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 4,
-        "name": "User accesses to Account Summary Information",
+        "line": 5,
+        "name": "User is in the Account Activity page",
         "description": "",
-        "id": "access-to-dashboard-page-with-the-account-summary-information;user-accesses-to-account-summary-information",
+        "id": "navigate-to-account-activity-page;user-is-in-the-account-activity-page",
         "after": [
           {
             "result": {
-              "duration": 701000000,
+              "duration": 664000000,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 1727000000,
+              "duration": 1694000000,
               "status": "passed"
             },
-            "line": 5,
+            "line": 6,
             "name": "user enters valid \"username\" and \"password\"",
             "match": {
               "arguments": [
@@ -57,112 +57,65 @@
           },
           {
             "result": {
-              "duration": 30067000000,
+              "duration": 30105000000,
               "status": "passed"
             },
-            "line": 6,
-            "name": "user is in account summary page",
+            "line": 7,
+            "name": "user is in Dashboard page",
             "match": {
-              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.userIsInAccountSummaryPage()"
+              "location": "com.zerobank.step_definitions.AccountActivityStepDefs.userIsInDashboardPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1575000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user navigate to \"Account Activity\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Account Activity\"",
+                  "offset": 17
+                }
+              ],
+              "location": "com.zerobank.step_definitions.AccountActivityStepDefs.userNavigateTo(java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
+              "duration": 5000000,
               "status": "passed"
             },
-            "line": 7,
-            "name": "title of page is \"Zero - Account Summary\"",
+            "line": 9,
+            "name": "title of page is \"Zero - Account Activity\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Zero - Account Summary\"",
+                  "val": "\"Zero - Account Activity\"",
                   "offset": 17
                 }
               ],
               "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.titleOfPageIs(java.lang.String)"
             },
             "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 84000000,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "Account Summary account types are:",
-            "match": {
-              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.accountSummaryAccountTypesAre(java.util.List\u003cjava.lang.String\u003e)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "Cash Accounts"
-                ]
-              },
-              {
-                "cells": [
-                  "Investment Accounts"
-                ]
-              },
-              {
-                "cells": [
-                  "Credit Accounts"
-                ]
-              },
-              {
-                "cells": [
-                  "Loan Accounts"
-                ]
-              }
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 32000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "Credit Accounts table column names are:",
-            "match": {
-              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.creditAccountsTableColumnNamesAre(java.util.List\u003cjava.lang.String\u003e)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "Account"
-                ]
-              },
-              {
-                "cells": [
-                  "Credit Card"
-                ]
-              },
-              {
-                "cells": [
-                  "Balance"
-                ]
-              }
-            ],
-            "keyword": "And "
           }
         ],
         "tags": [
           {
             "name": "@wip"
-          },
-          {
-            "name": "@AccountSummaryPage"
           }
         ]
       }
     ],
-    "name": "Access to Dashboard Page with the Account Summary Information",
+    "name": "Navigate to Account Activity page",
     "description": "",
-    "id": "access-to-dashboard-page-with-the-account-summary-information",
+    "id": "navigate-to-account-activity-page",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/AccountSummary.feature",
+    "uri": "file:src/test/resources/features/AccountActivity.feature",
     "tags": []
   }
 ]
