@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-08-07T22:53:13.579Z",
+        "start_timestamp": "2021-08-08T10:00:48.254Z",
         "before": [
           {
             "result": {
-              "duration": 2668000000,
+              "duration": 2699000000,
               "status": "passed"
             },
             "match": {
@@ -16,13 +16,13 @@
           }
         ],
         "line": 4,
-        "name": "User login with valid credentials",
+        "name": "User accesses to Account Summary Information",
         "description": "",
-        "id": "login-as-an-authorized-user;user-login-with-valid-credentials",
+        "id": "access-to-dashboard-page-with-the-account-summary-information;user-accesses-to-account-summary-information",
         "after": [
           {
             "result": {
-              "duration": 689000000,
+              "duration": 701000000,
               "status": "passed"
             },
             "match": {
@@ -35,7 +35,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2393000000,
+              "duration": 1727000000,
               "status": "passed"
             },
             "line": 5,
@@ -53,19 +53,99 @@
               ],
               "location": "com.zerobank.step_definitions.LoginStepDefs.user_enters_valid_and(java.lang.String,java.lang.String)"
             },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 30067000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is in account summary page",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.userIsInAccountSummaryPage()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 9000000,
               "status": "passed"
             },
-            "line": 6,
-            "name": "user enters to Account summary page",
+            "line": 7,
+            "name": "title of page is \"Zero - Account Summary\"",
             "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.user_enters_to_Account_summary_page()"
+              "arguments": [
+                {
+                  "val": "\"Zero - Account Summary\"",
+                  "offset": 17
+                }
+              ],
+              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.titleOfPageIs(java.lang.String)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 84000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Account Summary account types are:",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.accountSummaryAccountTypesAre(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Cash Accounts"
+                ]
+              },
+              {
+                "cells": [
+                  "Investment Accounts"
+                ]
+              },
+              {
+                "cells": [
+                  "Credit Accounts"
+                ]
+              },
+              {
+                "cells": [
+                  "Loan Accounts"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 32000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Credit Accounts table column names are:",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.creditAccountsTableColumnNamesAre(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Account"
+                ]
+              },
+              {
+                "cells": [
+                  "Credit Card"
+                ]
+              },
+              {
+                "cells": [
+                  "Balance"
+                ]
+              }
+            ],
+            "keyword": "And "
           }
         ],
         "tags": [
@@ -73,16 +153,16 @@
             "name": "@wip"
           },
           {
-            "name": "@loginWithValidCredentials"
+            "name": "@AccountSummaryPage"
           }
         ]
       }
     ],
-    "name": "Login as an authorized user",
+    "name": "Access to Dashboard Page with the Account Summary Information",
     "description": "",
-    "id": "login-as-an-authorized-user",
+    "id": "access-to-dashboard-page-with-the-account-summary-information",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/Login.feature",
+    "uri": "file:src/test/resources/features/AccountSummary.feature",
     "tags": []
   }
 ]

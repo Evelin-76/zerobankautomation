@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 
@@ -63,6 +64,13 @@ public class BrowserUtils {
         List<String> elemTexts = new ArrayList<>();
 
         for (WebElement el : elems) {
+            elemTexts.add(el.getText());
+        }
+        return elemTexts;
+    }
+    public static LinkedHashSet<String> getLinkHsElementsText(LinkedHashSet<WebElement> list) {
+        LinkedHashSet<String> elemTexts = new LinkedHashSet<>();
+        for (WebElement el : list) {
             elemTexts.add(el.getText());
         }
         return elemTexts;
