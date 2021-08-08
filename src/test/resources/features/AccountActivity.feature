@@ -1,0 +1,1 @@
+Feature: Navigate to Account Activity page
