@@ -26,8 +26,6 @@ public class AccountActivityStepDefs {
      //   System.out.println(Driver.get().findElement(By.xpath("//option[@value ='1']")));
         String actualDefaultOptionName = new AccountActivityPage().getSingleOptionDropDownText(1);
         Assert.assertEquals(expectedDefaultOptionName,actualDefaultOptionName);
-        System.out.println(expectedDefaultOptionName);
-        System.out.println(actualDefaultOptionName);
     }
 
     @When("user clicks on drop dawn options box")
