@@ -1,7 +1,9 @@
 package com.zerobank.pages;
 
 import com.zerobank.utilities.BrowserUtils;
+import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +36,12 @@ public abstract class BasePage {
     public WebElement myUser;
 
 
+    public void verifyDashboardPage(){
+        String loginPage = ConfigurationReader.get("url");
+        String currentPage = Driver.get().getCurrentUrl();
+        new DashboardPage().waitUntilLoaderScreenDisappear();
+        Assert.assertNotEquals(loginPage,currentPage);
+    }
 
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
@@ -108,6 +116,18 @@ public abstract class BasePage {
             BrowserUtils.clickWithTimeOut(Driver.get().findElement(By.xpath(moduleLocator)),  5);
 
         }
+    }
+    public void navigateToTab(String tab) {
+        String tabLocator = "//a[text()='" + tab + "']";
+
+        try {
+            BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
+            WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));
+            new Actions(Driver.get()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
+        } catch (Exception e) {
+            BrowserUtils.clickWithWait(By.xpath(tabLocator), 5);
+        }
+        Driver.get().findElement(By.xpath(tabLocator)).click();
     }
 
 }
