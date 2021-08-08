@@ -28,7 +28,7 @@ public class AccountActivityStepDefs {
 
     @Then("drop down default option is {string}")
     public void dropDownDefaultOptionIs(String expectedDefaultOptionName) {
-     //   System.out.println(Driver.get().findElement(By.xpath("//option[@value ='1']")));
+
         String actualDefaultOptionName = new AccountActivityPage().getSingleOptionDropDownText(1);
         Assert.assertEquals(expectedDefaultOptionName,actualDefaultOptionName);
     }

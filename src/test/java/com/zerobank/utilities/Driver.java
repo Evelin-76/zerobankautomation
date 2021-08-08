@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
@@ -24,7 +25,8 @@ public class Driver {
 
         // Test
         if (driver == null) {
-            // this line will tell which browser should open based on the value from properties file
+
+                // this line will tell which browser should open based on the value from properties file
             String browser = ConfigurationReader.get("browser");
             switch (browser) {
                 case "chrome":
