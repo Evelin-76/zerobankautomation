@@ -43,6 +43,7 @@ public class AccountActivityStepDefs {
 
         LinkedHashSet<String> actualDropDownOptions = BrowserUtils.getListNonDuplicateElementsText(new AccountActivityPage().accountDropDownOptions);
 
+        //converting LinkedHashSet in List for make assertion possible
         List<String> result = new ArrayList<>();
         for (String each : actualDropDownOptions) {
             result.add(each) ;
@@ -51,6 +52,10 @@ public class AccountActivityStepDefs {
     }
 
     @Then("Transtaction table column names are:")
-    public void transtactionTableColumnNamesAre() {
+    public void transtactionTableColumnNamesAre(List<String> expectedTableHeaderCells) {
+
+        List<String> actualTableHeaderCells = BrowserUtils.getElementsText(new AccountActivityPage().tableHeadrowCells);
+
+        Assert.assertEquals(expectedTableHeaderCells,actualTableHeaderCells);
     }
 }

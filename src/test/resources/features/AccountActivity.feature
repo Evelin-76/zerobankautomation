@@ -10,7 +10,7 @@ Background:
 
   Scenario: User checks drop down default option
     Then drop down default option is "Savings"
-  @wip
+
   Scenario: User checks drop down options
     When user clicks on drop dawn options box
     Then drop down options are:
@@ -19,7 +19,7 @@ Background:
     | Loan |
     | Credit Card |
     | Brokerage |
-
+  @wip
   Scenario: User checks Transactions table info column names
     Then Transtaction table column names are:
     | Date |

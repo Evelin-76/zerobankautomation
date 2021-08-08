@@ -16,8 +16,8 @@ public class AccountActivityPage extends BasePage{
     @FindBy (css = "option[value]")
     public List<WebElement> accountDropDownOptions;
 
-    @FindBy (xpath = "//thead")
-    public WebElement tableHeadrow;
+    @FindBy (xpath = "//thead//th")
+    public List<WebElement> tableHeadrowCells;
 
     public String getSingleOptionDropDownText(int index){
        String ElementByIndex = Driver.get().findElement(By.xpath("//option[@value ='"
