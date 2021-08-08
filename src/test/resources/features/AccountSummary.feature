@@ -1,4 +1,4 @@
-Feature: Access to Dashboard Page with the Account Summary Information
+Feature: Access to Dashboard Page that contains Account Summary Information
   @wip
   @AccountSummaryPage
   Scenario: User accesses to Account Summary Information
