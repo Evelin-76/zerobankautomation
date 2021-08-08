@@ -4,9 +4,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -68,12 +70,18 @@ public class BrowserUtils {
         }
         return elemTexts;
     }
-    public static LinkedHashSet<String> getLinkHsElementsText(LinkedHashSet<WebElement> list) {
-        LinkedHashSet<String> elemTexts = new LinkedHashSet<>();
-        for (WebElement el : list) {
-            elemTexts.add(el.getText());
+    public static List<String> getSelectDropDownElementsText(WebElement locator) {
+        //create  Select object by passing that elements as a constructor
+        Select dropdownOptions = new Select(locator);
+        //getting all elements/options in arrayList
+        List<WebElement> options = dropdownOptions.getOptions();
+        //printing every text element
+       List<String>  eachelement = new ArrayList<>();
+        for (WebElement each : options) {
+         eachelement.add(each.getText());
+
         }
-        return elemTexts;
+        return eachelement;
     }
 
     /**
