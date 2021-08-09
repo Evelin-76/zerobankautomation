@@ -14,11 +14,11 @@ import java.util.concurrent.TimeUnit;
 public class Hooks {
 
     @Before
-    public void setUp() throws InterruptedException {
+    public void setUp()  {
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
         Driver.get().manage().window().maximize();
-        Driver.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+      //  Driver.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     @After
