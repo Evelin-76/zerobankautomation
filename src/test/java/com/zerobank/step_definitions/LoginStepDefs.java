@@ -71,10 +71,9 @@ public class LoginStepDefs extends LoginPage{
             String EmptyPassword = arg1;
             System.out.println("Password input box is empty");
         }
-
-        new LoginPage().getTextTroublesMsg();
     }
     @Then("user sees a login error message")
     public void userSeesALoginErrorMessage() {
+        new LoginPage().getTextTroublesMsg();
     }
 }

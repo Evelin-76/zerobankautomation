@@ -8,7 +8,7 @@ Feature: Navigate to Pay Bills page
 
   Scenario: User is in the Pay Bills page
     Then title of page is "Zero - Pay Bills"
-  @wip
+
   Scenario:User enter valid input for make a Pay Operation
     When user enters "25" in Amount input box
     And user enters month "7" and year "2021" and day "18"
@@ -17,13 +17,13 @@ Feature: Navigate to Pay Bills page
     Then "The payment was successfully submitted." is displayed
 
   Scenario: User does NOT fill all input boxes for make a Pay Operation
-    When user leaves empty "" input box
-    Then "The payment was successfully submitted." is displayed
+    When user leaves empty "date" input box
+   # Then "Completa este campo" is displayed
 
  Scenario: : User enters Amount input for make a Pay Operation
     When user enters to Amount input box
     And enter numerical values like 100
-    But does NOT enter alphabetical or special characters like ""
+    But does NOT enter alphabetical or special characters like "a"
     Then values entered is accepted
 
 
