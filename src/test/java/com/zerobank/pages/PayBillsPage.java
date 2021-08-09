@@ -42,6 +42,12 @@ public class PayBillsPage extends BasePage {
         //dinamicDateCalendar.click();
         return dinamicDateCalendar;
     }
+    public WebElement getDinamicDateLocator(int monthNumber,int yearNumber,int dayNumber){
+        WebElement dinamicDateCalendar = Driver.get().findElement(By.xpath("(//td[@data-handler='selectDay'][@data-month='" + monthNumber + "']" +
+                "[@data-year='" + yearNumber + "']/a)[" + dayNumber + "]"));
+        //dinamicDateCalendar.click();
+        return dinamicDateCalendar;
+    }
 
 
 }

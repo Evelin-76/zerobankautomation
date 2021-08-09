@@ -15,10 +15,10 @@ Feature: Navigate to Pay Bills page
     And user enters "For me" as description
     And user clicks on the Pay button
     Then "The payment was successfully submitted." is displayed
-
+  @wip
   Scenario: User does NOT fill all input boxes for make a Pay Operation
-    When user leaves empty "date" input box
-   # Then "Completa este campo" is displayed
+    When user leaves empty "" input box
+    Then msg "Completa este campo" is displayed
 
  Scenario: : User enters Amount input for make a Pay Operation
     When user enters to Amount input box

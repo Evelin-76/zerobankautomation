@@ -38,29 +38,58 @@ public class PayBillsStepDefs {
     public void isDisplayed(String expectedSuccessMsg) {
         String actualSuccessMsg = new PayBillsPage().successPageesMsg.getText();
         Assert.assertEquals(expectedSuccessMsg,actualSuccessMsg);
-
-        Assert.assertEquals(expectedSuccessMsg,actualSuccessMsg);
     }
 
     @When("user leaves empty {string} input box")
-    public void userLeavesEmptyInputBox(String arg0) {
-    }
+    public void userLeavesEmptyInputBox(String inputBox) {
 
-    @When("user enters to Amount input box")
-    public void userEntersToAmountInputBox() {
-    }
+        //condition for manage boxes from steps in feature file
+        if (inputBox.equals("amount")) {
+            new PayBillsPage().amountInputBox.sendKeys("500");
+            System.out.println("Amount input box is empty");
+        } else if (inputBox.equals("date")) {
+            new PayBillsPage().calendarInputBox.click();
 
-    @And("enter numerical values like {int}")
-    public void enterNumericalValuesLike(int arg0) {
-    }
+            new PayBillsPage().getDinamicDateLocator("7", "2021", "24").click();
+            System.out.println("Date input box is empty");
+        } else if (inputBox.equals("")) {
+            System.out.println("Amount and Date input boxes are empty");
+            //both are empty
+        }
+        new PayBillsPage().Paybutton.click();
 
-    @But("does NOT enter alphabetical or special characters like {string}")
-    public void doesNOTEnterAlphabeticalOrSpecialCharactersLike(String arg0) {
-    }
 
-    @Then("values entered is accepted")
-    public void valuesEnteredIsAccepted() {
-    }
+//        //required as a attribute means we can get a window alert about to fill in some blank
+//        boolean amountInputEmpty = Boolean.parseBoolean(new PayBillsPage().amountInputBox.getAttribute("required"));
+//        boolean dateInputEmpty = Boolean.parseBoolean(new PayBillsPage().calendarInputBox.getAttribute("required"));
+//        //checking if boxes are empty or not
+//        System.out.println("Amount is required: " + new PayBillsPage().amountInputBox.getAttribute("required"));
+//        System.out.println("Date is required: " + new PayBillsPage().calendarInputBox.getAttribute("required"));
+
+        //  if(amountInputEmpty == true || dateInputEmpty == true){
+        //  String expectedMsg = "completa este campo"
+        //   Assert.assertEquals(expectedMsg, "completa este campo");}
+         }
+         @Then("msg {string} is displayed")
+         public void msgIsDisplayed(String expectedAlertMsg) {
+        String actualAlertMsg = new PayBillsPage().amountInputBox.getAttribute("validationMessage");
+             Assert.assertEquals(expectedAlertMsg,actualAlertMsg);
+         }
+        @When("user enters to Amount input box")
+        public void userEntersToAmountInputBox () {
+        }
+
+        @And("enter numerical values like {int}")
+        public void enterNumericalValuesLike ( int arg0){
+        }
+
+        @But("does NOT enter alphabetical or special characters like {string}")
+        public void doesNOTEnterAlphabeticalOrSpecialCharactersLike (String arg0){
+        }
+
+        @Then("values entered is accepted")
+        public void valuesEnteredIsAccepted () {
+        }
 
 
 
