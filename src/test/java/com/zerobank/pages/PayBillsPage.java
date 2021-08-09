@@ -8,10 +8,13 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.Map;
 
-public class PayBillsPage {
+public class PayBillsPage extends BasePage {
 
-    @FindBy (id = "sp_amount")
+    @FindBy (css = "#sp_amount")
     public WebElement amountInputBox;
+
+    @FindBy (css = "#sp_date")
+    public WebElement calendarInputBox;
 
     @FindBy (id = "sp_description")
     public WebElement descriptionInputBox;
@@ -28,11 +31,15 @@ public class PayBillsPage {
     @FindBy (xpath = "//select[@name='account']/option")
     public  List<WebElement> accountOptionsDropDown;
 
+    @FindBy (xpath = "//*[text()='The payment was successfully submitted.']")
+    public WebElement successPageesMsg;
+
 
     //Locator for select dynamically one full date(month/year/day ->writing int numbers)
-    public WebElement getDinamicDateLocator(int monthNumber,int yearNumber,int dayNumber){
+    public WebElement getDinamicDateLocator(String monthNumber,String yearNumber,String dayNumber){
         WebElement dinamicDateCalendar = Driver.get().findElement(By.xpath("(//td[@data-handler='selectDay'][@data-month='" + monthNumber + "']" +
                 "[@data-year='" + yearNumber + "']/a)[" + dayNumber + "]"));
+        //dinamicDateCalendar.click();
         return dinamicDateCalendar;
     }
 
