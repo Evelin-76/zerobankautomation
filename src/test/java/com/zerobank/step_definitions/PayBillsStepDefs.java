@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class PayBillsStepDefs {
 
-    @When("user enters {string} in Amount input box")
+    @When("user enters numerical value {string} in Amount input box")
     public void userEntersInAmountInputBox(String amount) throws InterruptedException {
         new PayBillsPage().amountInputBox.sendKeys(amount);
     }
@@ -57,37 +57,28 @@ public class PayBillsStepDefs {
             //both are empty
         }
         new PayBillsPage().Paybutton.click();
-
-
-//        //required as a attribute means we can get a window alert about to fill in some blank
-//        boolean amountInputEmpty = Boolean.parseBoolean(new PayBillsPage().amountInputBox.getAttribute("required"));
-//        boolean dateInputEmpty = Boolean.parseBoolean(new PayBillsPage().calendarInputBox.getAttribute("required"));
-//        //checking if boxes are empty or not
-//        System.out.println("Amount is required: " + new PayBillsPage().amountInputBox.getAttribute("required"));
-//        System.out.println("Date is required: " + new PayBillsPage().calendarInputBox.getAttribute("required"));
-
-        //  if(amountInputEmpty == true || dateInputEmpty == true){
-        //  String expectedMsg = "completa este campo"
-        //   Assert.assertEquals(expectedMsg, "completa este campo");}
          }
          @Then("msg {string} is displayed")
          public void msgIsDisplayed(String expectedAlertMsg) {
         String actualAlertMsg = new PayBillsPage().amountInputBox.getAttribute("validationMessage");
              Assert.assertEquals(expectedAlertMsg,actualAlertMsg);
          }
-        @When("user enters to Amount input box")
-        public void userEntersToAmountInputBox () {
-        }
 
-        @And("enter numerical values like {int}")
-        public void enterNumericalValuesLike ( int arg0){
-        }
-
-        @But("does NOT enter alphabetical or special characters like {string}")
-        public void doesNOTEnterAlphabeticalOrSpecialCharactersLike (String arg0){
+        @When("does NOT enter numerical characters like {string}")
+        public void doesNOTEnterAlphabeticalOrSpecialCharactersLike (String notNumericalChar){
+            new PayBillsPage().amountInputBox.sendKeys(notNumericalChar);
         }
 
         @Then("values entered are NOT is accepted")
         public void valuesEnteredAreNOTIsAccepted() {
+
+            new PayBillsPage().calendarInputBox.click();
+            new PayBillsPage().getDinamicDateLocator("7", "2021", "24").click();
+            new PayBillsPage().Paybutton.click();
+
+            String expetedPayeeMsg = new PayBillsPage().successPageesMsg.getText();
+            String actualPayeeMsg = new PayBillsPage().successPageesMsg.getText();
+
+            Assert.assertNotEquals(expetedPayeeMsg,actualPayeeMsg);
      }
 }
