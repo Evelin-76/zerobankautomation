@@ -87,10 +87,7 @@ public class PayBillsStepDefs {
         public void doesNOTEnterAlphabeticalOrSpecialCharactersLike (String arg0){
         }
 
-        @Then("values entered is accepted")
-        public void valuesEnteredIsAccepted () {
-        }
-
-
-
+        @Then("values entered are NOT is accepted")
+        public void valuesEnteredAreNOTIsAccepted() {
+     }
 }
