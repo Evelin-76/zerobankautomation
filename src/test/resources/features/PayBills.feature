@@ -21,9 +21,10 @@ Feature: Navigate to Pay Bills page
     Then msg "Completa este campo" is displayed
 
  Scenario: : User enters Amount input for make a Pay Operation
-    When user enters to Amount input box
-    And enter numerical values like 100
+   When user enters "100" in Amount input box
+    #When user enters to Amount input box
+   # And enter numerical values like 100
     But does NOT enter alphabetical or special characters like "a"
-    Then values entered is accepted
+    Then values entered are NOT is accepted
 
 
